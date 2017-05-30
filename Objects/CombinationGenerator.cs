@@ -14,6 +14,7 @@ namespace CoinCombinations
         int quarters = 0;
         int dimes = 0;
         int nickels = 0;
+        int pennies = 0;
 
         while(change >= 0.25m)
         {
@@ -30,10 +31,16 @@ namespace CoinCombinations
           change -= 0.05m;
           nickels++;
         }
+        while(change >= 0.01m)
+        {
+          change -= 0.01m;
+          pennies++;
+        }
 
         coins.Add($"{quarters} quarter(s)");
         coins.Add($"{dimes} dime(s)");
         coins.Add($"{nickels} nickel(s)");
+        coins.Add($"{pennies} pennies");
       }
 
       return coins;
