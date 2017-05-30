@@ -1,0 +1,14 @@
+@{
+ Layout="Shared/_Layout.cshtml";
+}
+
+<h1>Coin Sorter</h1>
+<h3>Sorted:</h3>
+<ul>
+  @foreach(var coin in Model)
+  {
+    <li>@coin</li>
+  }
+</ul>
+
+<p><a href="/">Home</a></p>

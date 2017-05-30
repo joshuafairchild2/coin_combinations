@@ -1,0 +1,12 @@
+@{
+ Layout="Shared/_Layout.cshtml";
+}
+
+<h1>Coin Sorter</h1>
+<form action="/sorted" method="get">
+  <div class="form-group">
+    <label for="userInput">Amount:</label>
+    <input class="form-control" type="float" name="userInput" id="userInput">
+  </div>
+  <button type="submit" class="btn btn-info" name="button">Submit</button>
+</form>
