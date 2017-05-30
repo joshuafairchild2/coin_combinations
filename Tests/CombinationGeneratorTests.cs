@@ -10,7 +10,7 @@ namespace CoinCombinations
     {
       //arrange
       decimal change = 0.75m;
-      List<string> sorted = new List<string>{"3 quarters"};
+      List<string> sorted = new List<string>{"3 quarter(s)", "0 dime(s)", "0 nickel(s)"};
       CombinationGenerator myGenerator = new CombinationGenerator();
 
       //act
@@ -18,6 +18,23 @@ namespace CoinCombinations
 
       //assert
       Assert.Equal(sorted, result);
+    }
+    [Fact]
+    public void Generate_SortCoins_CountAllDimes()
+    {
+      decimal change = 0.20m;
+      List<string> sorted = new List<string>{"0 quarter(s)", "2 dime(s)", "0 nickel(s)"};
+      CombinationGenerator myGenerator = new CombinationGenerator();
+
+      List<string> result = myGenerator.Generate(change);
+
+      Assert.Equal(sorted, result);
+    }
+    [Fact]
+    public void Generate_SortCoins_CountAllNickels()
+    {
+      decimal change = 0.30m;
+      List<string> sorted = new List<string>{"1 quarter(s)", "0 dime(s)", "1 nickel(s)"};
     }
   }
 }
